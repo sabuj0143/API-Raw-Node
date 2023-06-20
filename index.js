@@ -7,14 +7,19 @@
 // dependencies
 const http = require('http');
 const { handleReqRes } = require('./helpers/handleReqRes');
+const data = require('./lib/data')
 
 // app object - module scaffolding
 const app = {};
+data.create = ('test', 'newFile', { 'name': 'Bangladesh', 'language': 'bangla' }, (err) => {
+    console.log(`error was thrown: ${err.message}`);
+});
 
 // configuration
 app.config = {
     port: 3000,
 };
+
 
 // create server
 app.createServer = () => {
